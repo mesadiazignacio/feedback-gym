@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-21T00:00:00.000Z",
+  "title": "Design System: Feedback — Disco y Chapa",
+  "extensions": {
+    "colorMeta": {
+      "lima": {
+        "role": "primary",
+        "displayName": "Lima Calibrada",
+        "canonical": "#d9d92b",
+        "tonalRamp": ["#242405", "#3b3b09", "#53530f", "#6d6d16", "#8f8f1d", "#b9b923", "#d9d92b", "#f0f08a"]
+      },
+      "lima-2": {
+        "role": "primary",
+        "displayName": "Lima Profunda",
+        "canonical": "#b9b923",
+        "tonalRamp": ["#1e1e04", "#333307", "#47470c", "#5d5d12", "#7c7c18", "#9d9d1e", "#b9b923", "#e2e26d"]
+      },
+      "lima-3": {
+        "role": "primary",
+        "displayName": "Lima Oliva",
+        "canonical": "#6d6d16",
+        "tonalRamp": ["#121203", "#1e1e05", "#2c2c08", "#3c3c0c", "#525210", "#6d6d16", "#8d8d1c", "#c9c951"]
+      },
+      "chapa": {
+        "role": "secondary",
+        "displayName": "Chapa Carbón",
+        "canonical": "#4d4d4e",
+        "tonalRamp": ["#171718", "#222223", "#2e2e2f", "#3a3a3b", "#4d4d4e", "#6b6b6c", "#8f8f90", "#c4c4c5"]
+      },
+      "caucho": {
+        "role": "neutral",
+        "displayName": "Caucho",
+        "canonical": "#0b0b0b",
+        "tonalRamp": ["#0b0b0b", "#121212", "#191919", "#262627", "#3a3a3b", "#4d4d4e", "#8b8b81", "#f4f4f2"]
+      },
+      "caucho-2": {
+        "role": "neutral",
+        "displayName": "Caucho Solapado",
+        "canonical": "#121212",
+        "tonalRamp": ["#0b0b0b", "#121212", "#191919", "#212121", "#2c2c2c", "#3b3b3b", "#585858", "#909090"]
+      },
+      "caucho-3": {
+        "role": "neutral",
+        "displayName": "Caucho Solapado 2",
+        "canonical": "#191919",
+        "tonalRamp": ["#0b0b0b", "#121212", "#191919", "#232323", "#303030", "#414141", "#606060", "#9a9a9a"]
+      },
+      "regla": {
+        "role": "neutral",
+        "displayName": "Regla",
+        "canonical": "#262627",
+        "tonalRamp": ["#0b0b0b", "#151516", "#1d1d1e", "#262627", "#3a3a3b", "#525253", "#7c7c7d", "#b8b8b9"]
+      },
+      "regla-fuerte": {
+        "role": "neutral",
+        "displayName": "Regla Fuerte",
+        "canonical": "#3a3a3b",
+        "tonalRamp": ["#0e0e0e", "#181819", "#242425", "#2f2f30", "#3a3a3b", "#565657", "#838384", "#bfbfc0"]
+      },
+      "hueso": {
+        "role": "neutral",
+        "displayName": "Hueso",
+        "canonical": "#f4f4f2",
+        "tonalRamp": ["#1e1e1c", "#333331", "#4b4b48", "#666663", "#8b8b81", "#a5a59c", "#d2d2cd", "#f4f4f2"]
+      },
+      "hueso-2": {
+        "role": "neutral",
+        "displayName": "Hueso 2",
+        "canonical": "#a5a59c",
+        "tonalRamp": ["#1c1c1a", "#2e2e2b", "#43433f", "#5b5b56", "#77776f", "#8b8b81", "#a5a59c", "#dcdcd8"]
+      },
+      "hueso-3": {
+        "role": "neutral",
+        "displayName": "Hueso 3",
+        "canonical": "#8b8b81",
+        "tonalRamp": ["#171715", "#272725", "#393936", "#4e4e49", "#68685f", "#8b8b81", "#adada4", "#dcdcd8"]
+      },
+      "tinta-chapa": {
+        "role": "neutral",
+        "displayName": "Tinta Chapa",
+        "canonical": "#dcdcd8",
+        "tonalRamp": ["#1d1d1b", "#31312e", "#484844", "#61615c", "#7e7e77", "#a5a59c", "#c4c4bf", "#dcdcd8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Afiche",
+        "purpose": "Archivo wdth 125, mayúsculas, escala de afiche. Titular del hero, nombre de la sede elegida y titular de cierre. Leading responsivo: 0.96 bajo 640px (holgura para las tildes en mayúscula) y 0.88 desde 640px."
+      },
+      "headline": {
+        "displayName": "Titular",
+        "purpose": "Archivo wdth 118, mayúsculas, leading 0.9. El h2 de cada sección, siempre en dos líneas con la segunda en lima."
+      },
+      "title": {
+        "displayName": "Semi-wide",
+        "purpose": "Archivo wdth 112, mayúsculas, leading 1. Dato en peso pleno: nombre de actividad, dirección, nombre de profe, plazo de plan, precio, wordmark."
+      },
+      "body": {
+        "displayName": "Cuerpo",
+        "purpose": "Archivo wdth 100, redonda, leading 1.55–1.65. Medida cómoda 68ch; párrafo de apoyo al costado de un titular a 32–34ch."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Señalética estarcida: versalitas 600 con tracking 0.2em. Nombra un campo, una columna o una hora; no es una línea introductoria sobre un titular."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-disco", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Salida exponencial: la única curva del sistema, usada por los tres keyframes autorizados." },
+      { "name": "disco-entrada", "value": "disco-entrada 0.7s cubic-bezier(0.16, 1, 0.3, 1) both — from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none }", "purpose": "Aparición de un dato que llega del cliente (estado abierto/cerrado, marcador de la hora real)." },
+      { "name": "disco-estampa", "value": "disco-estampa 0.5s cubic-bezier(0.16, 1, 0.3, 1) both — from { clip-path: inset(0 100% 0 0) } to { clip-path: inset(0 0 0 0) }", "purpose": "Barrido que re-estampa todo lo que el selector de sede re-teclea: foto, placa de dirección, próxima clase, lista de actividades." },
+      { "name": "disco-pulso", "value": "disco-pulso 2.4s ease-in-out infinite — 0%,100% { opacity: 1 } 50% { opacity: 0.35 }", "purpose": "Exclusivo del punto de estado de la regla del día cuando la sala está abierta." },
+      { "name": "transicion-estado", "value": "transition: color 200ms, background-color 200ms, border-color 200ms", "purpose": "Hover y focus de botones, filas, enlaces y opciones del selector." },
+      { "name": "reduced-motion", "value": "@media (prefers-reduced-motion: reduce) { .entra, .estampa, .pulso { animation: none !important } html { scroll-behavior: auto } }", "purpose": "Los tres keyframes y el scroll suave se apagan por completo; ninguna información depende del movimiento." }
+    ],
+    "breakpoints": [
+      { "name": "min-360", "value": "360px" },
+      { "name": "min-420", "value": "420px" },
+      { "name": "min-470", "value": "470px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "container-max", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Acción primaria (WhatsApp)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "El único destino de conversión del sitio: plano lima con texto caucho, radio 0, ícono propio a la izquierda.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3.5 20.5 4.9 16.4A8.2 8.2 0 1 1 8 19.3l-4.5 1.2Z\"/><path d=\"M9 8.4c.3-.1.6 0 .8.3l.8 1.4c.1.3.1.6-.1.8l-.5.6c-.1.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.1.7-.1l.6-.5c.2-.2.5-.2.8-.1l1.4.8c.3.2.4.5.3.8-.2.9-1 1.5-1.9 1.4a8 8 0 0 1-6.4-6.4c-.1-.9.5-1.7 1.4-1.8Z\"/></svg><span>Probá una clase sin cargo</span></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; background: var(--color-lima, #d9d92b); color: var(--color-caucho, #0b0b0b); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-variation-settings: 'wdth' 112; font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; text-decoration: none; border: none; border-radius: 0; padding: 1.25rem 1.75rem; transition: background-color 200ms; } .ds-btn-primary .ds-icon { width: 1.25rem; height: 1.25rem; flex: none; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: var(--color-hueso, #f4f4f2); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-lima, #d9d92b); outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Solo borde en chapa; el hover lleva borde y texto a lima. Cómo llegar, Instagram, mail.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z\"/><circle cx=\"12\" cy=\"10.2\" r=\"2.6\"/></svg>Cómo llegar</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: transparent; color: var(--color-hueso, #f4f4f2); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-variation-settings: 'wdth' 100; font-weight: 600; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.12em; text-decoration: none; border: 1px solid var(--color-chapa, #4d4d4e); border-radius: 0; padding: 1.1rem 1.5rem; transition: color 200ms, border-color 200ms; } .ds-btn-secondary .ds-icon { width: 1rem; height: 1rem; flex: none; } .ds-btn-secondary:hover, .ds-btn-secondary:focus-visible { border-color: var(--color-lima, #d9d92b); color: var(--color-lima, #d9d92b); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-lima, #d9d92b); outline-offset: 3px; }"
+    },
+    {
+      "name": "Selector de sede (radiogroup)",
+      "kind": "input",
+      "refersTo": "radio-sede",
+      "description": "La interacción firma. Tres opciones en una barra con borde en chapa; la elegida es plano lima. Roving tabindex: una sola parada de tabulador por grupo y recorrido circular con las cuatro flechas.",
+      "html": "<div class=\"ds-sede\" role=\"radiogroup\" aria-label=\"Elegí tu sede\"><button type=\"button\" role=\"radio\" aria-checked=\"true\" tabindex=\"0\" class=\"ds-sede-op ds-sede-op--activa\">Ituzaingó</button><button type=\"button\" role=\"radio\" aria-checked=\"false\" tabindex=\"-1\" class=\"ds-sede-op\">Castelar</button><button type=\"button\" role=\"radio\" aria-checked=\"false\" tabindex=\"-1\" class=\"ds-sede-op\">Padua</button></div>",
+      "css": ".ds-sede { display: flex; width: 100%; border: 1px solid var(--color-chapa, #4d4d4e); } .ds-sede-op { flex: 1; text-align: center; background: transparent; color: var(--color-hueso-2, #a5a59c); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-variation-settings: 'wdth' 100; font-weight: 600; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.1em; border: none; border-radius: 0; padding: 0.875rem 0.5rem; cursor: pointer; transition: background-color 200ms, color 200ms; } .ds-sede-op + .ds-sede-op { border-left: 1px solid var(--color-chapa, #4d4d4e); } .ds-sede-op:hover { background: var(--color-caucho-3, #191919); color: var(--color-hueso, #f4f4f2); } .ds-sede-op--activa, .ds-sede-op--activa:hover { background: var(--color-lima, #d9d92b); color: var(--color-caucho, #0b0b0b); } .ds-sede-op:focus-visible { outline: 2px solid var(--color-lima, #d9d92b); outline-offset: 3px; }"
+    },
+    {
+      "name": "Foto con placa solapada",
+      "kind": "card",
+      "refersTo": "plate",
+      "description": "El modelo de profundidad del sistema: la placa de dirección se apoya en el borde inferior de la foto con una regla de chapa. Sin sombra, sin radio, sin overlay.",
+      "html": "<figure class=\"ds-figura\"><div class=\"ds-figura-foto\" role=\"img\" aria-label=\"Sala de musculación\"></div><figcaption class=\"ds-placa\"><span class=\"ds-rotulo\">Sede Ituzaingó</span><span class=\"ds-placa-dir\">Alvear <span class=\"ds-tnum\">1110</span></span><span class=\"ds-placa-nota\">Sede madre, 22 años en el barrio.</span></figcaption></figure>",
+      "css": ".ds-figura { position: relative; margin: 0; max-width: 24rem; } .ds-figura-foto { aspect-ratio: 720 / 470; width: 100%; background: var(--color-chapa, #4d4d4e); } .ds-placa { display: block; border-top: 1px solid var(--color-chapa, #4d4d4e); background: var(--color-caucho, #0b0b0b); padding: 1rem 1.25rem; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-rotulo { display: block; font-size: 0.75rem; line-height: 1; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-hueso-3, #8b8b81); } .ds-placa-dir { display: block; margin-top: 0.5rem; font-variation-settings: 'wdth' 112; font-weight: 700; font-size: 1.375rem; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-hueso, #f4f4f2); } .ds-tnum { font-variant-numeric: tabular-nums; } .ds-placa-nota { display: block; margin-top: 0.5rem; font-size: 0.8125rem; line-height: 1.35; color: var(--color-hueso-2, #a5a59c); }"
+    },
+    {
+      "name": "Fila del plano continuo",
+      "kind": "custom",
+      "refersTo": "band-chapa",
+      "description": "El reemplazo de la tarjeta: filas que comparten sus reglas de 1px y responden al hover cambiando de plano, nunca levantándose.",
+      "html": "<div class=\"ds-plano\"><div class=\"ds-fila\"><h3 class=\"ds-fila-tit\">Indoor Cycle</h3><p class=\"ds-fila-txt\">Bici en sala, música fuerte y un profe marcando el ritmo.</p><a class=\"ds-fila-cta\" href=\"#\">Probar <svg class=\"ds-icon-sm\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.5 12h15\"/><path d=\"m13.5 6 6 6-6 6\"/></svg></a></div><div class=\"ds-fila\"><h3 class=\"ds-fila-tit\">Funcional</h3><p class=\"ds-fila-txt\">Circuito de fuerza y movilidad en grupos chicos.</p><a class=\"ds-fila-cta\" href=\"#\">Probar <svg class=\"ds-icon-sm\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.5 12h15\"/><path d=\"m13.5 6 6 6-6 6\"/></svg></a></div></div>",
+      "css": ".ds-plano { border-top: 1px solid var(--color-regla, #262627); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-fila { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr) minmax(0, 2fr); align-items: baseline; gap: 1.5rem; border-bottom: 1px solid var(--color-regla, #262627); padding: 1.25rem 0; transition: background-color 200ms; } .ds-fila:hover { background: var(--color-caucho-2, #121212); } .ds-fila-tit { margin: 0; font-variation-settings: 'wdth' 112; font-weight: 700; font-size: 1.5rem; line-height: 1; letter-spacing: -0.025em; text-transform: uppercase; color: var(--color-hueso, #f4f4f2); } .ds-fila-txt { margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--color-hueso-2, #a5a59c); } .ds-fila-cta { display: inline-flex; align-items: center; justify-content: flex-end; gap: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: var(--color-hueso-2, #a5a59c); transition: color 200ms; } .ds-icon-sm { width: 0.875rem; height: 0.875rem; } .ds-fila-cta:hover, .ds-fila-cta:focus-visible { color: var(--color-lima, #d9d92b); }"
+    },
+    {
+      "name": "Barra superior",
+      "kind": "nav",
+      "refersTo": "band-chapa",
+      "description": "Isotipo y wordmark en dos tonos a la izquierda, navegación en rótulos y estado en vivo a la derecha. Sin menú hamburguesa: en mobile la nav se omite.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-marca\" href=\"#\"><svg class=\"ds-isotipo\" viewBox=\"0 0 224 224\" fill=\"none\" role=\"img\" aria-label=\"Feedback\"><circle cx=\"112\" cy=\"112\" r=\"112\" fill=\"var(--color-chapa, #4d4d4e)\"/><path d=\"M99.5 190.5V46.5H165\" stroke=\"var(--color-lima, #d9d92b)\" stroke-width=\"16\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"70.5\" cy=\"109.5\" r=\"10\" fill=\"var(--color-lima, #d9d92b)\"/><circle cx=\"127.5\" cy=\"109.5\" r=\"10\" fill=\"var(--color-lima, #d9d92b)\"/><circle cx=\"99.5\" cy=\"109.5\" r=\"11\" fill=\"var(--color-hueso, #f4f4f2)\"/></svg><span class=\"ds-wordmark\"><span class=\"ds-wm-feed\">Feed</span><span class=\"ds-wm-back\">back</span></span></a><nav class=\"ds-nav-links\" aria-label=\"Secciones\"><a href=\"#\">Actividades</a><a href=\"#\">Sedes</a><a href=\"#\">Planes</a></nav><span class=\"ds-estado\"><span class=\"ds-punto\" aria-hidden=\"true\"></span><span class=\"ds-rotulo\">Abierto</span></span></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: var(--color-caucho, #0b0b0b); border-bottom: 1px solid var(--color-regla, #262627); padding: 0.75rem 1.25rem; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-marca { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; transition: opacity 200ms; } .ds-marca:hover { opacity: 0.8; } .ds-isotipo { width: 2rem; height: 2rem; flex: none; } .ds-wordmark { font-variation-settings: 'wdth' 112; font-weight: 400; font-size: 1.0625rem; line-height: 1; letter-spacing: 0.06em; text-transform: uppercase; } .ds-wm-feed { color: var(--color-hueso, #f4f4f2); } .ds-wm-back { color: var(--color-lima, #d9d92b); } .ds-nav-links { display: flex; align-items: center; gap: 1.75rem; } .ds-nav-links a { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: var(--color-hueso-2, #a5a59c); transition: color 200ms; } .ds-nav-links a:hover, .ds-nav-links a:focus-visible { color: var(--color-lima, #d9d92b); } .ds-estado { display: inline-flex; align-items: center; gap: 0.5rem; } .ds-punto { display: block; width: 0.375rem; height: 0.375rem; border-radius: 9999px; background: var(--color-lima, #d9d92b); } .ds-estado .ds-rotulo { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-hueso-2, #a5a59c); }"
+    },
+    {
+      "name": "Regla del día",
+      "kind": "custom",
+      "refersTo": "band-lima",
+      "description": "El instrumento firma: ventana de 5:30 a 23:30 con ticks cada 30 minutos, tramo abierto en barra lima de 3px y marcador de la hora real de Buenos Aires con su etiqueta tabular.",
+      "html": "<div class=\"ds-regla\"><div class=\"ds-regla-lectura\"><span class=\"ds-punto ds-punto--pulso\" aria-hidden=\"true\"></span><p class=\"ds-regla-txt\"><strong>Abierto ahora</strong><span> · cierra 23:00</span></p></div><div class=\"ds-regla-pista\"><div class=\"ds-regla-abierto\"></div><span class=\"ds-tick ds-tick--hora\" style=\"left:5.5%\"></span><span class=\"ds-tick\" style=\"left:16.6%\"></span><span class=\"ds-tick ds-tick--hora\" style=\"left:27.7%\"></span><span class=\"ds-tick\" style=\"left:38.8%\"></span><span class=\"ds-tick ds-tick--hora\" style=\"left:50%\"></span><span class=\"ds-tick\" style=\"left:61.1%\"></span><span class=\"ds-tick ds-tick--hora\" style=\"left:72.2%\"></span><span class=\"ds-tick\" style=\"left:83.3%\"></span><span class=\"ds-tick ds-tick--hora\" style=\"left:94.4%\"></span><div class=\"ds-marcador\" style=\"left:57%\"><span class=\"ds-marcador-linea\"></span><span class=\"ds-marcador-etq ds-tnum\">16:10</span></div></div></div>",
+      "css": ".ds-regla { background: var(--color-caucho-2, #121212); border-top: 1px solid var(--color-regla, #262627); padding: 1.25rem; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-regla-lectura { display: flex; align-items: center; gap: 0.75rem; padding-bottom: 1.25rem; } .ds-regla .ds-punto { width: 0.625rem; height: 0.625rem; border-radius: 9999px; background: var(--color-lima, #d9d92b); } @keyframes ds-pulso { 0%, 100% { opacity: 1 } 50% { opacity: 0.35 } } .ds-punto--pulso { animation: ds-pulso 2.4s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .ds-punto--pulso { animation: none } } .ds-regla-txt { margin: 0; font-size: 0.9375rem; line-height: 1.2; color: var(--color-hueso-2, #a5a59c); } .ds-regla-txt strong { color: var(--color-hueso, #f4f4f2); font-weight: 600; } .ds-regla-pista { position: relative; height: 68px; border-top: 1px solid var(--color-regla, #262627); } .ds-regla-abierto { position: absolute; top: 0; left: 5.5%; width: 88.9%; height: 3px; background: var(--color-lima, #d9d92b); } .ds-tick { position: absolute; top: 0; width: 1px; height: 8px; background: var(--color-regla, #262627); } .ds-tick--hora { height: 14px; background: var(--color-regla-fuerte, #3a3a3b); } .ds-marcador { position: absolute; top: 0; height: 100%; } .ds-marcador-linea { position: absolute; top: 0; width: 2px; height: 2.25rem; transform: translateX(-50%); background: var(--color-lima, #d9d92b); } .ds-marcador-etq { position: absolute; top: 2.6rem; transform: translateX(-50%); white-space: nowrap; background: var(--color-lima, #d9d92b); color: var(--color-caucho, #0b0b0b); padding: 0.125rem 0.375rem; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Terna",
+      "kind": "chip",
+      "refersTo": "band-lima",
+      "description": "Los tres puntos del travesaño del isotipo (lima–hueso–lima) usados sueltos como separador, indicador de sede y marcador de paso. El único ornamento autorizado del sistema.",
+      "html": "<span class=\"ds-terna\" aria-hidden=\"true\"><span class=\"ds-terna-p\"></span><span class=\"ds-terna-p ds-terna-p--activo\"></span><span class=\"ds-terna-p\"></span></span>",
+      "css": ".ds-terna { display: inline-flex; align-items: center; gap: 5px; } .ds-terna-p { display: block; width: 5px; height: 5px; border-radius: 9999px; background: var(--color-lima, #d9d92b); } .ds-terna-p--activo { background: var(--color-hueso, #f4f4f2); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Disco y Chapa",
+    "overview": "El sistema está tomado prestado de la sala, no de la categoría. Discos calibrados, señalética estarcida sobre chapa, numerales que se leen a cinco metros y un solo color que significa en vez de decorar. La página no ilustra un gimnasio: usa sus materiales. El fondo es caucho de piso, las divisiones son reglas de 1px en carbón, los rótulos son versalitas con tracking de cartel de pared y la lima aparece exactamente donde hay un valor funcional que leer — sede activa, hora abierta, acción primaria.\n\nLa densidad es alta y deliberadamente plana. No hay tarjetas flotando sobre un fondo: hay un plano continuo que se subdivide, donde las filas comparten sus reglas y la profundidad sale del solape de dos materiales y del campo de color liso. Tres bandas rompen el negro con color pleno y esa ruptura es el ritmo de la página: la banda de chapa (Profes, el único plano claro del sitio), la banda lima (Cierre) y los planos solapados caucho-2 / caucho-3 para zonas y estados hover.\n\nRechazo confirmado: el arreglo que ya shipearon SportClub, OnFit y Fiter — hero con foto a sangre de alguien levantando peso, titular condensado bajo un degradado y carrusel de promos. Acá la foto es material plano recortado, el titular es afiche y no hay carrusel.",
+    "keyCharacteristics": [
+      "Una sola familia (Archivo variable) diferenciada por eje de ancho, no por peso ni por segunda tipografía.",
+      "Cero gradientes, cero sombras, cero vidrio: la profundidad es solape y color plano.",
+      "Bordes rectos en todo; el único radio es el del disco (círculos perfectos).",
+      "La lima es dato, no decoración: estado abierto, sede elegida, acción primaria.",
+      "Los números son datos: siempre tabulares.",
+      "La terna del isotipo (lima–blanco–lima) es el único ornamento autorizado.",
+      "Contraste auditado sobre el fondo real: todo texto del sitio pasa 4.5:1."
+    ],
+    "rules": [
+      { "name": "The Lima-Is-Data Rule", "body": "La lima solo marca algo que el visitante puede verificar: qué sede eligió, si está abierto ahora, qué clase está ocurriendo, cuál es la acción. Nunca se usa para jerarquizar un título completo, para un ícono decorativo ni para un fondo sin significado.", "section": "colors" },
+      { "name": "The Real-Background Rule", "body": "Todo color de texto se verifica contra su fondo real (con alpha y oklab resueltos), no contra el fondo de la página. Sobre chapa el secundario es tinta-chapa, no hueso-2. El build auditó 301 nodos con cero por debajo del mínimo WCAG; una superficie nueva hereda esa obligación, no el resultado.", "section": "colors" },
+      { "name": "The Never-Color-Alone Rule", "body": "Ningún estado se comunica solo por color. El punto lima de \"Abierto\" viene con la palabra, la celda en curso trae (ahora) para lector de pantalla, la sede elegida es aria-checked.", "section": "colors" },
+      { "name": "The One-Family Rule", "body": "Una sola familia en todo el sitio. La jerarquía se hace por eje de ancho (125 / 118 / 112 / 100) y por caja (mayúsculas vs. redonda), nunca sumando una segunda tipografía ni una display prestada.", "section": "typography" },
+      { "name": "The Tabular-Numeral Rule", "body": "Todo número que sea un dato va tabular. time, data y .tnum llevan tabular-nums y \"tnum\" 1 desde la base: horas, alturas de calle, teléfonos, precios y conteos.", "section": "typography" },
+      { "name": "The Stencil-Label Rule", "body": "El rótulo es señalética funcional —nombra un campo, una columna o una hora— y va en el margen o dentro de la estructura que nombra. No se usa como línea suelta de introducción encima de un titular.", "section": "typography" },
+      { "name": "The Continuous-Plane Rule", "body": "Una grilla comparte sus reglas: las utilidades plano (borde arriba + izquierda) y celda (borde derecha + abajo) construyen un plano subdividido de una sola línea de 1px entre celdas. Nunca se separa un ítem con gap y borde propio; si dos ítems están juntos, comparten la regla.", "section": "layout" },
+      { "name": "The No-Soft-Edge Rule", "body": "Ni sombras, ni degradados, ni vidrio, ni glow. Un elemento nuevo que necesite \"despegarse\" se despega solapando o cambiando de plano, no flotando.", "section": "elevation" },
+      { "name": "The Photo-Is-Flat-Material Rule", "body": "La foto es material plano recortado a un aspecto declarado (720/470, 4/5, 5/4, 1/1) con object-cover. Nunca lleva radio, borde flotante, sombra ni overlay en degradado; si hace falta texto encima, va en un chip de color pleno apoyado en un borde.", "section": "elevation" },
+      { "name": "The Icon-Authorship Rule", "body": "Un ícono nuevo se dibuja en el set de Iconos.tsx respetando grilla 24 y trazo 1.75. No se importa una librería, no se usa un emoji ni un glifo del sistema como ícono.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do usar la lima solo para un valor verificable (sede activa, hora abierta, clase en curso, acción primaria) y siempre con texto caucho encima.",
+      "Do construir la jerarquía con el eje de ancho de Archivo: 125 para afiche, 118 para titular de sección, 112 para dato en peso pleno, 100 para cuerpo y rótulo.",
+      "Do dar leading 0.96 al afiche por debajo de 640px y 0.88 a partir de ahí; las tildes en mayúscula necesitan ese aire.",
+      "Do dividir con reglas de 1px compartidas entre celdas vecinas (plano + celda) en vez de separar bloques con gap.",
+      "Do resolver la profundidad por solape y por escalón de plano (caucho → caucho-2 → caucho-3).",
+      "Do poner tnum en todo número que sea dato: hora, altura de calle, teléfono, precio, conteo.",
+      "Do verificar el contraste contra el fondo real del nodo y usar tinta-chapa como secundario sobre la banda de chapa.",
+      "Do acompañar todo estado en color con palabra o texto para lector de pantalla.",
+      "Do dibujar cualquier ícono nuevo en el set propio: grilla 24, trazo 1.75, currentColor.",
+      "Do desactivar toda animación nueva bajo prefers-reduced-motion: reduce."
+    ],
+    "donts": [
+      "Don't usar box-shadow, degradado, glow ni superficie de vidrio para dar altura.",
+      "Don't introducir un radio intermedio: el rectángulo es recto y el único radio es el círculo del disco.",
+      "Don't sumar una segunda familia tipográfica ni pesos sintéticos (font-synthesis-weight está en none).",
+      "Don't pintar un titular entero en lima ni usar lima como fondo sin significado funcional.",
+      "Don't poner overlay en degradado ni radio sobre una foto; si hace falta texto encima, va en un chip de color pleno apoyado en un borde.",
+      "Don't usar un rótulo como línea introductoria suelta encima de un titular; el rótulo nombra un campo, una columna o una hora.",
+      "Don't flotar tarjetas con borde propio y gap donde el sistema pide un plano continuo.",
+      "Don't importar una librería de íconos, un emoji o un glifo del sistema como ícono.",
+      "Don't dar una parada de tabulador por opción en un grupo de radios: una parada por grupo y recorrido con flechas.",
+      "Don't comunicar información crítica solo por color."
+    ]
+  }
+}

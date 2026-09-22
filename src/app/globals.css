@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   FEEDBACK — Disco y Chapa
+   Sistema tomado de la sala: caucho negro, chapa carbón, lima calibrada.
+   Sin gradientes, sin sombras blandas, sin vidrio. La profundidad sale del
+   solape y del campo de color plano.
+   ========================================================================== */
+
+@theme {
+  /* — Materiales ——————————————————————————————————————————————— */
+  --color-caucho: #0b0b0b; /* fondo, goma de piso */
+  --color-caucho-2: #121212; /* plano solapado */
+  --color-caucho-3: #191919; /* plano solapado 2 */
+  --color-chapa: #4d4d4e; /* gris del logo: chapa y señalética */
+  --color-regla: #262627; /* línea de 1px */
+  --color-regla-fuerte: #3a3a3b;
+
+  /* — Tinta ——————————————————————————————————————————————————— */
+  --color-hueso: #f4f4f2;
+  --color-hueso-2: #a5a59c; /* secundario, tintado hacia la lima */
+  --color-hueso-3: #8b8b81; /* terciario: 5.7:1 sobre el negro, apto para rótulos */
+  --color-tinta-chapa: #dcdcd8; /* secundario sobre la banda de chapa: 6.4:1 */
+
+  /* — Valor funcional ————————————————————————————————————————— */
+  --color-lima: #d9d92b;
+  --color-lima-2: #b9b923;
+  --color-lima-3: #6d6d16;
+
+  /* — Tipografía ————————————————————————————————————————————— */
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  /* — Ritmo ——————————————————————————————————————————————————— */
+  --spacing-gutter: 1.25rem;
+  --ease-disco: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  * {
+    border-color: var(--color-regla);
+  }
+
+  html {
+    background: var(--color-caucho);
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--color-caucho);
+    color: var(--color-hueso);
+    font-family: var(--font-sans);
+    font-variation-settings: "wdth" 100;
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* — Superficies del navegador: también son del sistema ————————— */
+  ::selection {
+    background: var(--color-lima);
+    color: var(--color-caucho);
+  }
+
+  :root {
+    accent-color: var(--color-lima);
+    caret-color: var(--color-lima);
+    color-scheme: dark;
+    scrollbar-color: var(--color-chapa) var(--color-caucho);
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-caucho);
+    border-left: 1px solid var(--color-regla);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-chapa);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-lima-2);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lima);
+    outline-offset: 3px;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  /* Los números son datos: siempre tabulares. */
+  time,
+  data,
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  img {
+    /* La foto es material plano: nunca flota. */
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   Utilidades del sistema
+   ========================================================================== */
+
+@utility wide {
+  font-variation-settings: "wdth" 125;
+}
+@utility semi-wide {
+  font-variation-settings: "wdth" 112;
+}
+@utility normal-wide {
+  font-variation-settings: "wdth" 100;
+}
+
+/* Rótulo estarcido: versalitas con tracking de señalética */
+@utility rotulo {
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Titular a escala de afiche */
+@utility afiche {
+  overflow-wrap: break-word;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variation-settings: "wdth" 125;
+  letter-spacing: -0.035em;
+  /* holgura para las tildes: en pantallas chicas el acento de EMPEZÁ
+     necesita aire contra la línea de arriba */
+  line-height: 0.96;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+@media (min-width: 640px) {
+  .afiche {
+    line-height: 0.88;
+  }
+}
+
+/* Titular de sección */
+@utility titular {
+  overflow-wrap: break-word;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variation-settings: "wdth" 118;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* Medida de lectura cómoda */
+@utility medida {
+  max-width: 68ch;
+}
+
+/* El plano continuo: una grilla que comparte sus reglas en vez de flotar */
+@utility plano {
+  border-top: 1px solid var(--color-regla);
+  border-left: 1px solid var(--color-regla);
+}
+@utility celda {
+  border-right: 1px solid var(--color-regla);
+  border-bottom: 1px solid var(--color-regla);
+}
+
+/* ==========================================================================
+   Movimiento: un solo momento autorizado, con salida exponencial
+   ========================================================================== */
+
+@keyframes disco-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes disco-estampa {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes disco-pulso {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.entra {
+  animation: disco-entrada 0.7s var(--ease-disco) both;
+}
+
+.estampa {
+  animation: disco-estampa 0.5s var(--ease-disco) both;
+}
+
+.pulso {
+  animation: disco-pulso 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entra,
+  .estampa,
+  .pulso {
+    animation: none !important;
+  }
+}
