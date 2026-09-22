@@ -7,9 +7,9 @@ export function Footer() {
   return (
     <footer className="border-t border-regla bg-caucho">
       <Contenedor>
-        <div className="grid gap-10 py-14 lg:grid-cols-12 lg:gap-8 lg:py-16">
+        <div className="grid gap-10 py-14 lg:grid-cols-12 lg:grid-rows-[auto_auto_auto_auto] lg:gap-x-8 lg:gap-y-0 lg:py-16">
           {/* ------------------------------------------------------- la marca */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 lg:row-span-4">
             <span className="flex items-center gap-3">
               <Isotipo className="h-11 w-11" />
               <span className="flex flex-col gap-1.5">
@@ -46,13 +46,13 @@ export function Footer() {
           </div>
 
           {/* -------------------------------------------------------- sedes */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 lg:row-span-4 lg:grid lg:grid-rows-subgrid">
             <span className="rotulo block border-b border-regla pb-2.5 text-hueso-3">
               Las tres sedes
             </span>
-            <ul>
+            <ul className="lg:row-span-3 lg:grid lg:grid-rows-subgrid">
               {sedes.map((s) => (
-                <li key={s.id} className="border-b border-regla py-4">
+                <li key={s.id} className="flex flex-col border-b border-regla py-4">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <span className="semi-wide text-[1.0625rem] font-bold uppercase tracking-[-0.01em] text-hueso">
                       {s.nombre}
@@ -83,13 +83,13 @@ export function Footer() {
           </div>
 
           {/* ----------------------------------------------------- horarios */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 lg:row-span-4 lg:grid lg:grid-rows-subgrid">
             <span className="rotulo block border-b border-regla pb-2.5 text-hueso-3">
               Horarios
             </span>
-            <ul>
+            <ul className="lg:row-span-3 lg:grid lg:grid-rows-subgrid">
               {horarioSemanal.resumen.map((r) => (
-                <li key={r.dias} className="border-b border-regla py-4">
+                <li key={r.dias} className="flex flex-col border-b border-regla py-4">
                   <span className="block text-[0.875rem] text-hueso-2">
                     {r.dias}
                   </span>
@@ -98,10 +98,15 @@ export function Footer() {
                   </span>
                 </li>
               ))}
+              <li className="flex flex-col border-b border-regla py-4">
+                <span className="block text-[0.875rem] text-hueso-2">
+                  Feriados
+                </span>
+                <span className="mt-1 block text-[0.9375rem] leading-snug text-hueso">
+                  Anunciado mediante nuestras redes sociales
+                </span>
+              </li>
             </ul>
-            <p className="mt-4 text-[0.8125rem] leading-snug text-hueso-3">
-              Mismo horario en Ituzaingó, Castelar y Padua.
-            </p>
           </div>
         </div>
 

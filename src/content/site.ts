@@ -307,8 +307,6 @@ export type Diferencial = {
   foto: string;
   fotoAlt: string;
   foco?: string;
-  /** Es una captura de interfaz: se monta sobre una placa, no va suelta. */
-  pantalla?: boolean;
 };
 
 export const diferenciales: Diferencial[] = [
@@ -317,17 +315,9 @@ export const diferenciales: Diferencial[] = [
     cuerpo:
       "Si sos socio tenés la app de Feedback: tu rutina siempre a mano, actualizada según tu progreso, con un video explicativo por ejercicio y el registro de cuánto entrenaste por semana y por mes.",
     dato: "App propia",
-    pantalla: true,
     foto: "/img/app.webp",
+    foco: "50% 50%",
     fotoAlt: "Pantalla de la app de Feedback con el panel mensual de entrenamiento",
-  },
-  {
-    titulo: "Un profe que mira tu serie",
-    cuerpo:
-      "No alcanza con venir a entrenar. Hay alguien atento a tu progreso: seguimiento, corrección de técnica y planificación personalizada, con nombre y apellido.",
-    dato: "Seguimiento por alumno",
-    foto: "/img/act-musculacion.webp",
-    fotoAlt: "Socia entrenando con barra bajo supervisión del profe",
   },
   {
     titulo: "Todo el equipo certificado en RCP",

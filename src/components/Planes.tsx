@@ -1,12 +1,11 @@
 "use client";
 
-import { beneficios, planes, PRECIO_PENDIENTE } from "@/content/site";
+import { planes, PRECIO_PENDIENTE } from "@/content/site";
 
 const SIN_PRECIOS = planes.every((p) =>
   p.opciones.every((o) => o.precio === PRECIO_PENDIENTE),
 );
 import { BotonWhatsApp, Contenedor, Seccion, SelectorSede } from "./ui";
-import { IconoTilde } from "./Iconos";
 import { useSede } from "./SedeContexto";
 
 function Precio({ valor }: { valor: string }) {
@@ -36,19 +35,30 @@ export function Planes() {
             <br />
             <span className="text-lima">sin letra chica.</span>
           </h2>
-          <p className="medida text-[0.9375rem] leading-[1.65] text-hueso-2 md:max-w-[34ch] md:text-right">
-            Con débito automático pagás 10% menos, todos los meses.
-          </p>
+          {/* El pedido de precio vive acá arriba, al lado del titular: es lo
+              único que la sección le pide al visitante. */}
+          <div className="w-full md:max-w-[26rem]">
+            <p className="rotulo mb-2.5 text-hueso-3">
+              Pedí el valor de tu sede
+            </p>
+            <SelectorSede etiqueta="Elegí tu sede para consultar el precio" />
+            <BotonWhatsApp className="w-full">
+              Pedime el valor de {sede.nombre}
+            </BotonWhatsApp>
+            <p className="mt-3 text-[0.8125rem] leading-snug text-hueso-3">
+              Te pasamos los valores por WhatsApp en el momento, sin vueltas.
+            </p>
+          </div>
         </div>
       </Contenedor>
 
       {/* -------------------------------------------------------- la matriz */}
-      <div className="border-t border-regla">
+      <div className="border-t border-regla pb-6 lg:pb-10">
         <Contenedor>
           {SIN_PRECIOS ? (
             /* Sin montos cargados: se muestra la estructura, no cuatro veces
                la misma palabra en una tabla vacía. */
-            <ul className="grid gap-px border-b border-regla py-8 sm:grid-cols-3">
+            <ul className="grid gap-x-8 gap-y-6 py-8 sm:grid-cols-3 sm:gap-y-0">
               {[
                 { que: "Plazo", como: "1 mes o 3 meses" },
                 { que: "Forma de pago", como: "Efectivo o débito automático" },
@@ -72,12 +82,12 @@ export function Planes() {
                 </span>
               </div>
 
-              {planes.map((p) => (
+              {planes.map((p, i) => (
                 <div
                   key={p.id}
-                  className={`grid gap-5 border-b border-regla py-8 md:grid-cols-12 md:items-center md:gap-6 ${
-                    p.destacado ? "bg-caucho-3" : ""
-                  }`}
+                  className={`grid gap-5 py-8 md:grid-cols-12 md:items-center md:gap-6 ${
+                    i < planes.length - 1 ? "border-b border-regla" : ""
+                  } ${p.destacado ? "bg-caucho-3" : ""}`}
                 >
                   <div className="md:col-span-4">
                     <h3 className="semi-wide text-[clamp(1.375rem,2.6vw,1.875rem)] font-bold uppercase leading-none tracking-[-0.025em] text-hueso">
@@ -105,36 +115,6 @@ export function Planes() {
           )}
         </Contenedor>
       </div>
-
-      {/* --------------------------------------------- beneficios + cierre */}
-      <Contenedor>
-        <div className="grid gap-10 py-12 lg:grid-cols-12 lg:gap-12 lg:py-16">
-          <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:col-span-7">
-            {beneficios.map((b) => (
-              <li
-                key={b}
-                className="flex items-start gap-3 text-[0.9375rem] leading-snug text-hueso"
-              >
-                <IconoTilde className="mt-[0.15em] size-4 shrink-0 text-lima" />
-                {b}
-              </li>
-            ))}
-          </ul>
-
-          <div className="lg:col-span-5">
-            <p className="rotulo mb-2.5 text-hueso-3">
-              Pedí el valor de tu sede
-            </p>
-            <SelectorSede etiqueta="Elegí tu sede para consultar el precio" />
-            <BotonWhatsApp className="w-full">
-              Pedime el valor de {sede.nombre}
-            </BotonWhatsApp>
-            <p className="mt-3 text-[0.8125rem] leading-snug text-hueso-3">
-              Te pasamos los valores por WhatsApp en el momento, sin vueltas.
-            </p>
-          </div>
-        </div>
-      </Contenedor>
     </Seccion>
   );
 }

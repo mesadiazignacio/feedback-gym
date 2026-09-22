@@ -21,6 +21,13 @@ type Ctx = {
 
 const SedeCtx = createContext<Ctx | null>(null);
 
+/**
+ * Un proveedor por bloque, no uno por página: cada sección con selector de
+ * sede —hero, actividades, sedes, planes, cierre— monta el suyo y arranca en
+ * Ituzaingó. Compartir un solo estado hacía que elegir una sede en el cierre
+ * moviera la página hasta el carril de actividades, que rebobina cuando la
+ * sede cambia.
+ */
 export function SedeProvider({ children }: { children: ReactNode }) {
   const [sedeId, setSedeId] = useState<SedeId>("ituzaingo");
   const [revision, setRevision] = useState(0);
