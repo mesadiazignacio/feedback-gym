@@ -95,22 +95,25 @@ export function Hero() {
 
           {/* ------------------------------------------------------ columna 2 */}
           <div className="lg:col-span-5">
-            <figure className="relative">
+            {/* la foto toma el alto entero de la columna izquierda: el bloque
+                cierra a ras del botón, sin aire muerto abajo */}
+            <figure className="relative lg:h-full">
               <img
                 key={`foto-${sedeId}-${revision}`}
                 src={sede.fotoHero}
                 alt={sede.fotoAlt}
                 width={720}
                 height={470}
-                className="estampa aspect-[720/470] w-full object-cover"
+                className="estampa aspect-[720/470] w-full object-cover object-center lg:aspect-auto lg:h-full lg:object-left"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
               />
-              {/* la placa se solapa: la profundidad sale del solape, no de una sombra */}
+              {/* la placa se monta sobre la foto: la profundidad sale del
+                  solape y del filete lima, no de una sombra */}
               <figcaption
                 key={`placa-${sedeId}-${revision}`}
-                className="estampa border-t border-chapa bg-caucho px-5 py-4"
+                className="estampa border-t border-chapa bg-caucho px-5 py-4 lg:absolute lg:bottom-4 lg:left-4 lg:right-4 lg:border-l-2 lg:border-t-0 lg:border-lima"
               >
                 <span className="rotulo block text-hueso-3">
                   Sede {sede.nombre}
