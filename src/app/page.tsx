@@ -1,7 +1,6 @@
 import { SedeProvider } from "@/components/SedeContexto";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ReglaDelDia } from "@/components/ReglaDelDia";
 import { Objeciones } from "@/components/Objeciones";
 import { Actividades } from "@/components/Actividades";
 import { Sedes } from "@/components/Sedes";
@@ -22,12 +21,9 @@ export default function Home() {
       </a>
       <Header />
       <main>
-        {/* El hero y la regla del día son una sola pantalla: la firma
-            de la página vive dentro del primer viewport. */}
-        <div className="flex min-h-[calc(100svh-4.25rem)] flex-col">
-          <Hero />
-          <ReglaDelDia />
-        </div>
+        {/* El hero ocupa el primer viewport completo: la firma de la página
+            vive adentro de esa pantalla. */}
+        <Hero />
         <Objeciones />
         <Actividades />
         <Sedes />

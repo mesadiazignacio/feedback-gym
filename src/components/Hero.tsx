@@ -22,7 +22,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative flex flex-1 flex-col">
+    <section
+      id="top"
+      className="relative flex min-h-[calc(100svh-4.25rem)] flex-col"
+    >
       <Contenedor className="flex flex-1 flex-col">
         {/* ------------------------------------------- micro-rótulos al margen */}
         <div className="hidden flex-wrap items-center justify-between gap-y-2 border-b border-regla py-3 lg:flex">

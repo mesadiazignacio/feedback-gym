@@ -3,8 +3,11 @@
 import { objeciones } from "@/content/site";
 import { Contenedor, Seccion } from "./ui";
 import { IconoFlecha } from "./Iconos";
+import { useRevelado } from "./Revelado";
 
 export function Objeciones() {
+  const { registrar, visibles } = useRevelado(objeciones.length);
+
   return (
     <Seccion id="objeciones" className="bg-caucho-2">
       <Contenedor>
@@ -21,12 +24,17 @@ export function Objeciones() {
         </div>
       </Contenedor>
 
-      {/* un plano continuo: las filas comparten sus reglas, no flotan */}
+      {/* un plano continuo: las filas comparten sus reglas, no flotan.
+          Cada renglón se escribe cuando el scroll lo alcanza, de arriba
+          hacia abajo. */}
       <div className="border-t border-regla">
-        {objeciones.map((o) => (
+        {objeciones.map((o, i) => (
           <div
             key={o.duda}
-            className="border-b border-regla transition-colors duration-200 hover:bg-caucho-3"
+            ref={registrar(i)}
+            data-revela={i}
+            data-visible={visibles[i] ? "true" : "false"}
+            className="revela border-b border-regla transition-colors duration-200 hover:bg-caucho-3"
           >
             <Contenedor>
               <div className="grid items-center gap-3 py-6 md:grid-cols-[1fr_auto_1fr] md:gap-8 md:py-7">

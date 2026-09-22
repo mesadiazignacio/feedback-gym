@@ -200,7 +200,7 @@ typography:
     lineHeight: 1.15
     letterSpacing: "normal"
     fontVariation: "'wdth' 100"
-  # rótulo sobre foto en la tira de actividades
+  # rótulo sobre foto (chip de sede, Diferenciales)
   label-xs:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.625rem"
@@ -310,7 +310,7 @@ Rechazo confirmado: el arreglo que ya shipearon SportClub, OnFit y Fiter — her
 Paleta muestreada del logo y de la sala: dos materiales oscuros, un gris de chapa, una tinta hueso y un solo amarillo verdoso funcional.
 
 ### Primary
-- **Lima Calibrada** (`{colors.lima}`): el valor funcional del sistema. Sede elegida en el radiogroup, tramo horario abierto y marcador de la hora real en la regla del día, celda de clase en curso en la grilla semanal, fondo de la acción primaria, segunda mitad del wordmark ("back"), punto de estado "Abierto", los puntos exteriores de la terna, y el fondo entero de la banda de cierre. Sobre lima el texto es siempre caucho.
+- **Lima Calibrada** (`{colors.lima}`): el valor funcional del sistema. Sede elegida en el radiogroup, barra de avance del carril de actividades, celda de clase en curso en la grilla semanal, fondo de la acción primaria, segunda mitad del wordmark ("back"), punto de estado "Abierto", los puntos exteriores de la terna, y el fondo entero de la banda de cierre. Sobre lima el texto es siempre caucho.
 - **Lima Profunda** (`{colors.lima-2}`): un solo uso, el hover del pulgar de la barra de scroll.
 - **Lima Oliva** (`{colors.lima-3}`): reserva de la rampa para lima sobre plano claro; no aparece en el build.
 
@@ -319,9 +319,9 @@ Paleta muestreada del logo y de la sala: dos materiales oscuros, un gris de chap
 
 ### Neutral
 - **Caucho** (`{colors.caucho}`): el piso. Fondo de `html` y `body`, de la barra superior, de la placa de dirección solapada sobre la foto y del `themeColor` del navegador. Es también el color de texto sobre cualquier plano lima o chapa.
-- **Caucho Solapado** (`{colors.caucho-2}`) y **Caucho Solapado 2** (`{colors.caucho-3}`): los dos únicos escalones de plano por encima del piso. `caucho-2` para bandas de sección alternas (Objeciones, Planes, la regla del día) y hover de fila; `caucho-3` para fila destacada, celda con clase y hover de opción no elegida.
+- **Caucho Solapado** (`{colors.caucho-2}`) y **Caucho Solapado 2** (`{colors.caucho-3}`): los dos únicos escalones de plano por encima del piso. `caucho-2` para bandas de sección alternas (Objeciones, Planes) y para las fichas del carril de actividades; `caucho-3` para fila destacada, celda con clase y hover de opción no elegida.
 - **Regla** (`{colors.regla}`): la línea de 1px por defecto; es el `border-color` global de todo elemento. Divide el plano continuo.
-- **Regla Fuerte** (`{colors.regla-fuerte}`): tick de hora en punto en la regla del día y subrayado de enlaces secundarios.
+- **Regla Fuerte** (`{colors.regla-fuerte}`): subrayado de enlaces secundarios.
 - **Hueso** (`{colors.hueso}`): la tinta. Texto principal sobre caucho y sobre chapa.
 - **Hueso 2** (`{colors.hueso-2}`): texto secundario y párrafos de apoyo sobre caucho; opción no elegida en el radiogroup.
 - **Hueso 3** (`{colors.hueso-3}`): rótulos, metadatos y notas al pie sobre caucho. Su valor está levantado a propósito respecto de una versión anterior para que todo rótulo despeje 4.5:1 sobre el negro.
@@ -355,7 +355,7 @@ afiche en 320px y en 1920px.
 | Paso | Dónde |
 |---|---|
 | `0.5rem` | bajada del wordmark en el header |
-| `0.5625rem` – `0.625rem` | chips de sede sobre foto, rótulos de la tira de actividades |
+| `0.5625rem` – `0.625rem` | chips de sede sobre foto, chip de la banda de Diferenciales |
 | `0.6875rem` | profe dentro de una celda de la grilla semanal |
 | `0.75rem` | rótulo base (`@utility rotulo`), navegación, encabezados de columna |
 | `0.8125rem` | notas al pie, nota de forma de pago, hechos de sede secundarios |
@@ -370,7 +370,7 @@ afiche en 320px y en 1920px.
 
 | Uso | Clamp |
 |---|---|
-| Titular del hero | `clamp(2.25rem, min(9vw, 9.6svh), 6.25rem)` — el `min()` con `svh` evita que el afiche empuje la regla del día fuera del primer viewport en pantallas bajas |
+| Titular del hero | `clamp(2.25rem, min(9vw, 9.6svh), 6.25rem)` — el `min()` con `svh` evita que el afiche desborde el primer viewport en pantallas bajas |
 | Titular de cierre | `clamp(1.875rem, 7.2vw, 5.5rem)` |
 | Nombre de la sede elegida | `clamp(2rem, 6.5vw, 4.5rem)` |
 | `h2` de sección | `clamp(2rem, 5.2vw, 3.75rem)` |
@@ -404,7 +404,7 @@ Un contenedor único de 1400px máximo con gutters escalonados (1rem en mobile, 
 
 La grilla de trabajo es de 12 columnas desde `lg` (1024px) y se colapsa a una sola columna abajo. El reparto recurrente es **7 / 5** (hero: titular y control a la izquierda, foto a la derecha; cierre: titular y tarjeta de acción; planes: beneficios y consulta) y **5 / 7** en Sedes y Diferenciales. Las listas de ítems van 1 → 2 (`sm`) → 3 (`lg`) columnas. Breakpoints: 640 / 768 / 1024 / 1280, más tres puntos de corte a medida para el texto de botones y el bloque de bajada del logo (360, 420, 470px).
 
-El primer viewport es una sola pantalla: `min-h-[calc(100svh-4.25rem)]` conteniendo hero **y** regla del día, con el titular en `svh` para no desbordar en mobile. El ritmo vertical de banda es `py-12`→`lg:py-16` para secciones de lista y `py-14`→`lg:py-20` para las de mayor peso; dentro de una fila el paso es 0.25rem. El `--spacing-gutter` (1.25rem) es el paso de referencia.
+El primer viewport es una sola pantalla: el hero lleva `min-h-[calc(100svh-4.25rem)]`, con el titular en `svh` para no desbordar en mobile. El ritmo vertical de banda es `py-12`→`lg:py-16` para secciones de lista y `py-14`→`lg:py-20` para las de mayor peso; dentro de una fila el paso es 0.25rem. El `--spacing-gutter` (1.25rem) es el paso de referencia.
 
 **The Continuous-Plane Rule.** Una grilla comparte sus reglas: las utilidades `plano` (borde arriba + izquierda) y `celda` (borde derecha + abajo) construyen un plano subdividido de una sola línea de 1px entre celdas. Nunca se separa un ítem con `gap` y borde propio; si dos ítems están juntos, comparten la regla.
 
@@ -422,9 +422,9 @@ El primer viewport es una sola pantalla: `min-h-[calc(100svh-4.25rem)]` contenie
 
 ## Shapes
 
-Bordes rectos en todo: radio 0 en botones, controles, placas, chips, tarjetas, celdas de tabla y fotos. El **único** radio del sistema es el círculo perfecto (`rounded-full`): el disco del isotipo, los puntos de la terna (5px), el punto de estado (6px en la barra, 10px en la regla del día) y las viñetas de lista (6px). Un radio intermedio no existe en este mundo.
+Bordes rectos en todo: radio 0 en botones, controles, placas, chips, tarjetas, celdas de tabla y fotos. El **único** radio del sistema es el círculo perfecto (`rounded-full`): el disco del isotipo, los puntos de la terna (5px), el punto de estado (6px en la barra) y las viñetas de lista (6px). Un radio intermedio no existe en este mundo.
 
-Las líneas son de 1px y siempre en la rampa de regla o en chapa cuando separan dos materiales distintos; sobre la banda de chapa las divisiones pasan a `caucho/30`–`caucho/35`. Los ticks de la regla del día son de 1px (media hora, `regla`, 8px de alto) y 1px (hora en punto, `regla-fuerte`, 14px) y el marcador de la hora real es de 2px en lima con su etiqueta en un rectángulo lima de 0.625rem.
+Las líneas son de 1px y siempre en la rampa de regla o en chapa cuando separan dos materiales distintos; sobre la banda de chapa las divisiones pasan a `caucho/30`–`caucho/35`.
 
 Los íconos son un set propio dibujado sobre grilla de 24 con trazo 1.75, `currentColor`, cabos y uniones redondeados, un solo peso para todo el sitio. Tamaños en uso: 3.5 / 4 / 5 (0.875–1.25rem).
 
@@ -440,7 +440,7 @@ Los íconos son un set propio dibujado sobre grilla de 24 con trazo 1.75, `curre
 - **Terciary / inline:** enlace en rótulo `hueso-2` con flecha, hover a lima. Nunca un tercer plano de color.
 
 ### Chips
-- **Style:** rectángulo de color pleno apoyado en la esquina inferior izquierda de una foto, sin radio: fondo caucho con texto lima (tira de actividades) o fondo lima con texto caucho (Diferenciales). Tipografía de rótulo a 0.625rem.
+- **Style:** rectángulo de color pleno apoyado en la esquina inferior izquierda de una foto, sin radio: fondo lima con texto caucho (Diferenciales). Tipografía de rótulo a 0.625rem.
 - **State:** estático; el chip etiqueta, no se selecciona.
 
 ### Cards / Containers
@@ -455,15 +455,20 @@ Barra superior fija (`sticky top-0`, z-50), fondo caucho al 95%, `border-bottom`
 ### Radiogroup de sede (signature)
 El control que gobierna la página. Tres opciones en una sola barra con borde en chapa y divisiones internas en chapa, sin radio, texto en rótulo con tracking 0.1em. La elegida es plano lima con texto caucho; las otras son transparentes con texto `hueso-2` y hover `caucho-3`/hueso.
 
-Accesibilidad como parte del diseño: `role="radiogroup"` con `aria-labelledby` generado por `useId` (hay cuatro instancias en la página), roving tabindex — una sola parada de tabulador por grupo — y recorrido circular con las cuatro flechas, moviendo el foco al cambiar. Al elegir, la página se re-teclea: foto del hero, placa de dirección, próxima clase de la regla del día, lista de actividades, banda de sede con su grilla semanal y todos los destinos de WhatsApp. El re-teclado se hace visible con el barrido de `estampa`.
+Accesibilidad como parte del diseño: `role="radiogroup"` con `aria-labelledby` generado por `useId` (hay cuatro instancias en la página), roving tabindex — una sola parada de tabulador por grupo — y recorrido circular con las cuatro flechas, moviendo el foco al cambiar. Al elegir, la página se re-teclea: foto del hero, placa de dirección, carril de actividades, banda de sede con su grilla semanal y todos los destinos de WhatsApp. El re-teclado se hace visible con el barrido de `estampa`.
 
-### Regla del día y grilla semanal (signature)
-Dos instrumentos con una sola lógica, posicionados contra la hora de Buenos Aires. La **regla del día** dibuja una ventana de 5:30 a 23:30 con ticks cada 30 minutos (los de hora en punto más altos y en `regla-fuerte`), rotula siete horas (una de cada dos se oculta bajo 640px), pinta el tramo abierto como barra lima de 3px y marca la hora real con una línea lima de 2px y su etiqueta. La **grilla semanal** es la misma lectura en tabla: columna del día actual y celda de la clase en curso en plano lima con texto caucho, celda con clase en `caucho-3`, horas en lima tabular, scroll horizontal con `min-w-[33rem]`. Ambas llevan un resumen en `sr-only` con la hora y el estado.
+### Carril de actividades (signature)
+La sección se ancla al llegar: de 768px para arriba el marco pide `100svh` más el excedente del carril, la ventana queda `sticky` bajo la barra (68px) y el avance vertical se traduce en el desplazamiento horizontal de la pista, un `translate3d` por cuadro. El encabezado —el rótulo «Actividades» y el radiogroup de sede, separados por regla— vive **adentro** de esa ventana anclada: queda a la vista todo el recorrido, así el control nunca se va de la mano mientras las fichas pasan. Las fichas son planos de 21–24rem de alto separados por regla de 1px: la foto de la actividad va a fondo completo bajo un velo plano de `caucho/78` —velo, no degradado— que afloja a `caucho/62` en hover; encima, el número en rótulo tabular, el nombre en `semi-wide` y la acción abajo. La que todavía no tiene foto queda en plano `caucho-2`. Toda la ficha es el enlace a WhatsApp. Una regla lima al pie mide cuánto se recorrió. En táctil, o con `prefers-reduced-motion`, no hay anclaje: el mismo carril es scroll horizontal nativo con `snap-x snap-mandatory` y el aviso "Deslizá →". Cambiar de sede devuelve el carril al principio con un rebobinado propio de 780ms (salida exponencial `1 − 2^(−10t)`, `behavior: "instant"` por cuadro para no pelearse con el `scroll-behavior: smooth` del documento): las fichas vuelven hacia atrás a la vista en vez de aparecer cortadas a mitad de camino, y un `wheel` o un `touchstart` lo cortan —si el visitante mueve el scroll, manda él—. En táctil el mismo cambio devuelve el scroll horizontal al inicio, y bajo `prefers-reduced-motion` el regreso es un salto sin animación. Tabulando, el foco de una ficha lleva la página hasta la posición donde esa ficha está a la vista.
+
+### Grilla semanal (signature)
+La lectura de la semana en tabla, posicionada contra la hora de Buenos Aires: columna del día actual y celda de la clase en curso en plano lima con texto caucho, celda con clase en `caucho-3`, horas en lima tabular, scroll horizontal con `min-w-[33rem]`. Lleva un resumen en `sr-only` con la hora y el estado.
 
 ### Marca
 Isotipo SVG reconstruido en `viewBox` 0 0 224 224: disco chapa, "F" lima de trazo 16 con cabos redondeados y un travesaño de tres puntos (lima–hueso–lima). El wordmark es "Feed" en hueso + "back" en lima, `wdth` 112, tracking 0.06em, redonda. La **terna** de tres puntos de 5px se reusa suelta como separador, indicador de sede y marcador de paso — es el único ornamento del sistema.
 
 **Motion.** Tres keyframes autorizados, todos con la salida exponencial `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease-disco`): `disco-entrada` (0.7s, 14px de subida con fundido) para la aparición de un dato que llega del cliente; `disco-estampa` (0.5s, barrido de `clip-path` de izquierda a derecha) para re-estampar todo lo que el selector de sede re-teclea; `disco-pulso` (2.4s, opacidad 1→0.35) exclusivo del punto de estado cuando está abierto. Las transiciones de estado son `colors` a 200ms. Los tres quedan en `animation: none` bajo `prefers-reduced-motion: reduce`, junto con el `scroll-behavior`.
+
+A eso se suman dos movimientos gobernados por la posición del scroll y no por la carga. El **revelado en cascada** (`.revela`: 18px de subida con fundido, 0.55s con la misma salida exponencial) enciende cada renglón cuando el scroll lo alcanza; si varios entran en la misma tanda, el observador los escalona de arriba hacia abajo cada 90ms, de modo que la lista de objeciones se escribe sola en el orden en que se lee. El **carril anclado** de actividades traduce avance vertical en desplazamiento horizontal. Ninguno de los dos es condición de lectura: sin `IntersectionObserver` o bajo `prefers-reduced-motion: reduce` todo está puesto desde el principio y el carril vuelve a ser un scroll horizontal nativo.
 
 ## Do's and Don'ts
 

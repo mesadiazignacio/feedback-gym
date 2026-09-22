@@ -65,7 +65,9 @@
     font-synthesis-weight: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
+    /* clip y no hidden: hidden crea un contexto de scroll que rompe
+       position: sticky (el carril de actividades lo necesita). */
+    overflow-x: clip;
   }
 
   /* — Superficies del navegador: también son del sistema ————————— */
@@ -241,5 +243,37 @@
   .estampa,
   .pulso {
     animation: none !important;
+  }
+}
+
+/* Revelado en cascada: la pieza entra cuando el scroll la alcanza.
+   Mismo gesto que disco-entrada, pero gobernado por la posición y no por
+   la carga; el escalonado lo pone el observador, no el CSS. */
+.revela {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.55s var(--ease-disco),
+    transform 0.55s var(--ease-disco);
+}
+
+.revela[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* El carril horizontal en modo táctil: scroll nativo con paradas. */
+.carril {
+  scrollbar-width: none;
+}
+.carril::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revela {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
