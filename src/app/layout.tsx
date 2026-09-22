@@ -19,7 +19,7 @@ const URL_SITIO = "https://feedbackgym.com.ar";
 export const metadata: Metadata = {
   metadataBase: new URL(URL_SITIO),
   title: {
-    default: "Feedback — Gimnasio en Ituzaingó, Castelar y Padua",
+    default: "Feedback — Gimnasios",
     template: "%s · Feedback",
   },
   description:
