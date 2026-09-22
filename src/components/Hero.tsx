@@ -28,7 +28,7 @@ export function Hero() {
     >
       <Contenedor className="flex flex-1 flex-col">
         {/* ------------------------------------------- micro-rótulos al margen */}
-        <div className="hidden flex-wrap items-center justify-between gap-y-2 border-b border-regla py-3 lg:flex">
+        <div className="hidden flex-wrap items-center justify-between gap-y-2 border-b border-regla py-3 md:flex">
           <span className="rotulo flex items-center gap-2.5 text-hueso-3">
             {sedes.map((s, i) => (
               <span key={s.id} className="flex items-center gap-2.5">
@@ -44,16 +44,16 @@ export function Hero() {
           </span>
         </div>
 
-        <div className="grid flex-1 content-center gap-8 pb-8 pt-7 sm:gap-10 lg:grid-cols-12 lg:gap-10 lg:pb-6 lg:pt-8">
+        <div className="grid flex-1 content-center gap-8 pb-8 pt-7 sm:gap-10 apaisado:grid-cols-12 apaisado:gap-10 apaisado:pb-6 apaisado:pt-8">
           {/* ------------------------------------------------------ columna 1 */}
-          <div className="flex flex-col justify-between lg:col-span-7">
+          <div className="flex flex-col justify-between apaisado:col-span-7">
             <div>
               <h1 className="afiche text-[clamp(2.25rem,min(9vw,9.6svh),6.25rem)]">
                 <span className="block text-hueso">{copy.heroLinea1}</span>
                 <span className="block text-lima">{copy.heroAcento}</span>
               </h1>
 
-              <p className="medida mt-5 max-w-[46ch] text-[1rem] leading-[1.55] text-hueso-2 sm:text-[1.0625rem] lg:mt-6">
+              <p className="medida mt-5 max-w-[46ch] text-[1rem] leading-[1.55] text-hueso-2 sm:text-[1.0625rem] apaisado:mt-6">
                 {copy.heroBajada}
               </p>
             </div>
@@ -94,17 +94,18 @@ export function Hero() {
           </div>
 
           {/* ------------------------------------------------------ columna 2 */}
-          <div className="lg:col-span-5">
-            {/* la foto toma el alto entero de la columna izquierda: el bloque
-                cierra a ras del botón, sin aire muerto abajo */}
-            <figure className="relative lg:h-full">
+          <div className="apaisado:col-span-5">
+            {/* apaisado, la foto toma el alto entero de la columna izquierda
+                y el bloque cierra a ras del botón, sin aire muerto abajo; en
+                vertical es una franja ancha debajo del control */}
+            <figure className="relative apaisado:h-full">
               <img
                 key={`foto-${sedeId}-${revision}`}
                 src={sede.fotoHero}
                 alt={sede.fotoAlt}
                 width={720}
                 height={470}
-                className="estampa aspect-[720/470] w-full object-cover object-center lg:aspect-auto lg:h-full lg:object-left"
+                className="estampa aspect-[720/470] w-full object-cover object-center md:aspect-[16/7] apaisado:aspect-auto apaisado:h-full apaisado:object-left"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
@@ -113,7 +114,7 @@ export function Hero() {
                   solape y del filete lima, no de una sombra */}
               <figcaption
                 key={`placa-${sedeId}-${revision}`}
-                className="estampa border-t border-chapa bg-caucho px-5 py-4 lg:absolute lg:bottom-4 lg:left-4 lg:right-4 lg:border-l-2 lg:border-t-0 lg:border-lima"
+                className="estampa border-t border-chapa bg-caucho px-5 py-4 md:absolute md:bottom-4 md:left-4 md:right-4 md:border-l-2 md:border-t-0 md:border-lima"
               >
                 <span className="rotulo block text-hueso-3">
                   Sede {sede.nombre}

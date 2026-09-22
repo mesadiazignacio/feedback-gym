@@ -11,13 +11,13 @@ export function Objeciones() {
   return (
     <Seccion id="objeciones" className="bg-caucho-2">
       <Contenedor>
-        <div className="flex flex-col justify-between gap-6 py-14 md:flex-row md:items-end lg:py-20">
-          <h2 className="titular max-w-[16ch] text-[clamp(2rem,5.2vw,3.75rem)]">
+        <div className="flex flex-col justify-between gap-6 py-14 lg:flex-row lg:items-end lg:py-20">
+          <h2 className="titular max-w-[16ch] text-[clamp(2rem,5.2vw,3.75rem)] md:max-w-[24ch] lg:max-w-[16ch]">
             Ya sabemos lo que
             <br />
             estás <span className="text-lima">pensando.</span>
           </h2>
-          <p className="medida text-[0.9375rem] leading-[1.65] text-hueso-2 md:max-w-[34ch] md:text-right">
+          <p className="medida text-[0.9375rem] leading-[1.65] text-hueso-2 lg:max-w-[34ch] lg:text-right">
             Seis frases que escuchamos todos los días en el mostrador. Y lo que
             les contestamos.
           </p>

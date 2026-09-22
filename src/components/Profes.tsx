@@ -42,8 +42,8 @@ export function Profes() {
   return (
     <Seccion id="profes" className="bg-chapa text-hueso">
       <Contenedor>
-        <div className="flex flex-col justify-between gap-5 py-8 md:flex-row md:items-end lg:py-10">
-          <h2 className="titular max-w-[17ch] text-[clamp(2rem,5.2vw,3.75rem)]">
+        <div className="flex flex-col justify-between gap-5 py-8 lg:flex-row lg:items-end lg:py-10">
+          <h2 className="titular max-w-[17ch] text-[clamp(2rem,5.2vw,3.75rem)] md:max-w-[24ch] lg:max-w-[17ch]">
             Los que te van a conocer
             <br />
             <span className="text-lima">por el nombre.</span>
@@ -53,7 +53,7 @@ export function Profes() {
               filtra —una línea, nunca un párrafo colgado del titular. */}
           <p
             aria-live="polite"
-            className="rotulo flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-tinta-chapa md:justify-end"
+            className="rotulo flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-tinta-chapa lg:justify-end"
           >
             {actividad ? (
               <>

@@ -29,15 +29,15 @@ export function Planes() {
   return (
     <Seccion id="planes" className="bg-caucho-2">
       <Contenedor>
-        <div className="flex flex-col justify-between gap-6 py-14 md:flex-row md:items-end lg:py-20">
-          <h2 className="titular max-w-[14ch] text-[clamp(2rem,5.2vw,3.75rem)]">
+        <div className="flex flex-col justify-between gap-6 py-14 lg:flex-row lg:items-end lg:py-20">
+          <h2 className="titular max-w-[14ch] text-[clamp(2rem,5.2vw,3.75rem)] md:max-w-[26ch] lg:max-w-[14ch]">
             La cuota,
             <br />
             <span className="text-lima">sin letra chica.</span>
           </h2>
           {/* El pedido de precio vive acá arriba, al lado del titular: es lo
               único que la sección le pide al visitante. */}
-          <div className="w-full md:max-w-[26rem]">
+          <div className="w-full lg:max-w-[26rem]">
             <p className="rotulo mb-2.5 text-hueso-3">
               Pedí el valor de tu sede
             </p>

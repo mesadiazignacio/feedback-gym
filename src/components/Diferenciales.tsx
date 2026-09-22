@@ -8,12 +8,16 @@ export function Diferenciales() {
   return (
     <Seccion id="por-que">
       <Contenedor className="!px-0">
-        <div className="grid border-b border-regla md:grid-cols-3">
+        {/* Tres columnas sólo cuando hay ancho para tres columnas. En tablet
+            vertical la terna se parte en tres filas de foto y texto: la misma
+            pieza, leída en el otro eje, sin exprimir el titular a dos
+            palabras por renglón. */}
+        <div className="grid border-b border-regla lg:grid-cols-3">
           {diferenciales.map((d, i) => (
             <article
               key={d.titulo}
-              className={`px-4 py-10 sm:px-8 ${
-                i > 0 ? "border-t border-regla md:border-l md:border-t-0" : ""
+              className={`px-4 py-10 sm:px-8 md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center md:gap-8 md:py-12 lg:block lg:py-10 ${
+                i > 0 ? "border-t border-regla lg:border-l lg:border-t-0" : ""
               }`}
             >
               <figure className="relative">
@@ -33,12 +37,14 @@ export function Diferenciales() {
                   {d.dato}
                 </figcaption>
               </figure>
-              <h3 className="semi-wide mt-6 text-[1.375rem] font-bold uppercase leading-none tracking-[-0.025em] text-hueso">
-                {d.titulo}
-              </h3>
-              <p className="mt-3 text-[0.9375rem] leading-[1.6] text-hueso-2">
-                {d.cuerpo}
-              </p>
+              <div>
+                <h3 className="semi-wide mt-6 text-[1.375rem] font-bold uppercase leading-none tracking-[-0.025em] text-hueso md:mt-0 md:text-[1.625rem] lg:mt-6 lg:text-[1.375rem]">
+                  {d.titulo}
+                </h3>
+                <p className="mt-3 text-[0.9375rem] leading-[1.6] text-hueso-2">
+                  {d.cuerpo}
+                </p>
+              </div>
             </article>
           ))}
         </div>

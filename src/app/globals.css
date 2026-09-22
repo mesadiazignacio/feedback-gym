@@ -123,6 +123,19 @@
 }
 
 /* ==========================================================================
+   Variantes de forma
+   ========================================================================== */
+
+/* Apaisado: ancho de sobra Y pantalla más ancha que alta.
+   El ancho solo no alcanza para decidir una composición: un iPad Pro en
+   vertical mide 1024px de ancho —el umbral de escritorio— pero 1366 de alto.
+   Partir el hero en dos columnas ahí deja el afiche encerrado en media
+   pantalla y lo obliga a cortar palabras. Con esta variante el afiche ocupa
+   todo el ancho mientras la pantalla sea vertical, y recién se parte en dos
+   cuando de verdad es apaisada. */
+@custom-variant apaisado (@media (min-width: 1024px) and (min-aspect-ratio: 1/1));
+
+/* ==========================================================================
    Utilidades del sistema
    ========================================================================== */
 

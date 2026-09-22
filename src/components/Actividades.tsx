@@ -40,14 +40,15 @@ export function Actividades() {
 /**
  * El carril de actividades.
  *
- * De 768px para arriba la sección se ancla al llegar: mientras el scroll
- * vertical avanza, las fichas corren de derecha a izquierda y la regla de
- * abajo mide cuánto queda. Es el mismo movimiento de siempre —bajar— leído
- * en el otro eje.
+ * Con mouse y de 768px para arriba la sección se ancla al llegar: mientras
+ * el scroll vertical avanza, las fichas corren de derecha a izquierda y la
+ * regla de abajo mide cuánto queda. Es el mismo movimiento de siempre
+ * —bajar— leído en el otro eje.
  *
- * En táctil, o con el movimiento desactivado, no hay anclaje: el carril es
- * un scroll horizontal nativo con paradas. Nunca se secuestra el scroll de
- * quien no puede o no quiere ese gesto.
+ * En táctil —celular y tablet, en cualquier orientación—, o con el
+ * movimiento desactivado, no hay anclaje: el carril es un scroll horizontal
+ * nativo con paradas. Nunca se secuestra el scroll de quien no puede o no
+ * quiere ese gesto.
  */
 function Carril({
   items,
@@ -79,11 +80,13 @@ function Carril({
      entran enteras en la pantalla, la sección es una banda común. */
   const fijar = anclado && recorrido > 0;
 
-  /* ¿Corresponde anclar? Sólo en pantallas anchas y con movimiento
-     habilitado. Arranca en false para que el servidor y el cliente
-     coincidan: el modo táctil es el punto de partida. */
+  /* ¿Corresponde anclar? Sólo con puntero fino —mouse o trackpad—, pantalla
+     ancha y movimiento habilitado. La tablet entra por ancho pero se maneja
+     con el dedo: ahí el gesto correcto es arrastrar el carril, no secuestrar
+     el scroll de la página. Arranca en false para que el servidor y el
+     cliente coincidan: el modo táctil es el punto de partida. */
   useEffect(() => {
-    const ancha = window.matchMedia("(min-width: 768px)");
+    const ancha = window.matchMedia("(min-width: 768px) and (pointer: fine)");
     const quieta = window.matchMedia("(prefers-reduced-motion: reduce)");
     const leer = () => setAnclado(ancha.matches && !quieta.matches);
     leer();
@@ -307,7 +310,7 @@ function Carril({
             className={`flex ${
               anclado
                 ? "h-[min(34rem,calc(100svh-21rem))] w-max will-change-transform"
-                : "carril h-[21rem] w-full snap-x snap-mandatory overflow-x-auto sm:h-[24rem] md:h-[26rem]"
+                : "carril h-[21rem] w-full snap-x snap-mandatory overflow-x-auto sm:h-[24rem] md:h-[28rem] lg:h-[31rem]"
             }`}
           >
             <li className={relleno} aria-hidden />
@@ -315,7 +318,7 @@ function Carril({
             {items.map((a, i) => (
               <li
                 key={a.nombre}
-                className="flex w-[78vw] shrink-0 snap-start border-l border-regla bg-caucho-2 sm:w-[21rem] lg:w-[23rem]"
+                className="flex w-[78vw] shrink-0 snap-start border-l border-regla bg-caucho-2 sm:w-[21rem] md:w-[22rem] lg:w-[23rem]"
               >
                 <a
                   href={enlace(a)}
@@ -432,10 +435,15 @@ function Carril({
           </div>
         )}
 
+        {/* El gesto del carril táctil, en su propia banda: suelto sobre la
+            foto el rótulo se pisaba con el «Probar» de la ficha del borde. Una
+            regla y un renglón es como habla el resto de la página. */}
         {!anclado && (
-          <span className="rotulo pointer-events-none absolute bottom-2 right-4 text-[0.625rem] text-hueso-3 sm:right-8">
-            Deslizá →
-          </span>
+          <div className="flex justify-end border-t border-regla px-4 py-2.5 sm:px-8 xl:px-12">
+            <span className="rotulo text-[0.625rem] text-hueso-3">
+              Deslizá →
+            </span>
+          </div>
         )}
       </div>
     </div>

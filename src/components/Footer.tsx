@@ -7,9 +7,12 @@ export function Footer() {
   return (
     <footer className="border-t border-regla bg-caucho">
       <Contenedor>
-        <div className="grid gap-10 py-14 lg:grid-cols-12 lg:grid-rows-[auto_auto_auto_auto] lg:gap-x-8 lg:gap-y-0 lg:py-16">
+        {/* En tablet vertical el pie no es una columna larga: la marca arriba, y
+            las sedes y los horarios a la par. En escritorio vuelven las tres
+            columnas del plano. */}
+        <div className="grid gap-10 py-14 md:grid-cols-2 md:gap-x-8 lg:grid-cols-12 lg:grid-rows-[auto_auto_auto_auto] lg:gap-x-8 lg:gap-y-0 lg:py-16">
           {/* ------------------------------------------------------- la marca */}
-          <div className="lg:col-span-4 lg:row-span-4">
+          <div className="md:col-span-2 lg:col-span-4 lg:row-span-4">
             <span className="flex items-center gap-3">
               <Isotipo className="h-11 w-11" />
               <span className="flex flex-col gap-1.5">

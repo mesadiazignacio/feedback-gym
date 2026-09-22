@@ -263,13 +263,13 @@ export function Sedes() {
   return (
     <Seccion id="sedes" className="bg-caucho-2">
       <Contenedor>
-        <div className="flex flex-col justify-between gap-5 py-8 md:flex-row md:items-end lg:py-10">
-          <h2 className="titular max-w-[19ch] text-[clamp(2rem,5.2vw,3.75rem)]">
+        <div className="flex flex-col justify-between gap-5 py-8 lg:flex-row lg:items-end lg:py-10">
+          <h2 className="titular max-w-[19ch] text-[clamp(2rem,5.2vw,3.75rem)] md:max-w-[26ch] lg:max-w-[19ch]">
             Tres sedes,
             <br />
             <span className="text-lima">todas en el oeste.</span>
           </h2>
-          <p className="medida text-pretty text-[0.9375rem] leading-[1.65] text-hueso-2 md:max-w-[30ch] md:text-right">
+          <p className="medida text-pretty text-[0.9375rem] leading-[1.65] text-hueso-2 lg:max-w-[30ch] lg:text-right">
             Elegí la que te queda de paso y mirá su grilla completa.
           </p>
         </div>

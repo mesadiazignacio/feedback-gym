@@ -64,7 +64,10 @@ export function BotonWhatsApp({
       className={`group inline-flex items-center justify-center gap-2.5 bg-lima font-semibold uppercase tracking-[0.04em] text-caucho transition-colors duration-200 hover:bg-hueso focus-visible:bg-hueso ${
         compacto
           ? "px-3.5 py-2.5 text-[0.75rem] sm:px-4"
-          : "semi-wide px-5 py-5 text-[0.875rem] sm:px-7 sm:text-base"
+          : /* entre lg y xl la tarjeta de cierre es angosta y «Probá una clase
+               sin cargo» se parte en dos renglones: ahí el botón afina su
+               caja antes que su recado. De xl en adelante, sin cambios. */
+            "semi-wide px-5 py-5 text-[0.875rem] sm:px-7 sm:text-base lg:px-4 lg:text-[0.875rem] xl:px-7 xl:text-base"
       } ${className ?? ""}`}
     >
       <IconoWhatsApp className={compacto ? "size-4" : "size-5"} />
