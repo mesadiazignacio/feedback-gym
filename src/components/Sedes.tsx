@@ -46,10 +46,19 @@ function Grilla({ sede }: { sede: Sede }) {
       </div>
 
       <div className="w-full overflow-x-auto overscroll-x-contain [contain:paint]">
-        <table className="w-full min-w-[33rem] border-collapse text-left">
+        <table className="w-full min-w-[40rem] table-fixed border-collapse text-left">
           <caption className="sr-only">
             Grilla semanal de clases de Feedback {sede.nombre}
           </caption>
+          {/* Las columnas se reparten a mano: con el ancho automático, un día
+              sin clases (el sábado de Ituzaingó o Padua) colapsaba y descuadraba
+              toda la grilla. */}
+          <colgroup>
+            <col className="w-[13%]" />
+            {DIAS.map((d) => (
+              <col key={d} className="w-[14.5%]" />
+            ))}
+          </colgroup>
           <thead>
             <tr>
               <th
