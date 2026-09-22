@@ -94,7 +94,6 @@ export const sedes: Sede[] = [
     fotoSecundaria: "/img/sede-ituzaingo.webp",
     fotoSecundariaAlt: "Socios entrenando en la sala de musculación de Feedback Ituzaingó",
     focoSecundaria: "50% 80%",
-    desde: "2004",
   },
   {
     id: "castelar",
