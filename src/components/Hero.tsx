@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[calc(100svh-4.25rem)] flex-col"
+      className="scroll-mt-20 relative flex min-h-[calc(100svh-4.25rem)] flex-col"
     >
       <Contenedor className="flex flex-1 flex-col">
         {/* ------------------------------------------- micro-rótulos al margen */}
